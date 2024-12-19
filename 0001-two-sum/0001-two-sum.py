@@ -26,21 +26,37 @@ class Solution(object):
         :rtype: List[int]
         """
         
+        for i_1, e_1 in enumerate(nums):
+            for i_2, e_2 in enumerate(nums):
+                if e_1 + e_2 == target:
+                    if i_1 != i_2:
+                        return [i_1, i_2]
+
+
+                
+        
         # nums = [3,3]
         # target = 6
         
-        for i,e_i in enumerate(nums):
-            for j,e_j in enumerate(nums):
-                if e_i + e_j == target:
-                    if i != j:
-                        # print(f"i: {i}, j: {j}")
-                        return [i, j]
+        # for i,e_i in enumerate(nums):
+        #     for j,e_j in enumerate(nums):
+        #         if e_i + e_j == target:
+        #             if i != j:
+        #                 return [i, j]
         
+        # for i in range(len(nums)):
+        #     for j in range(i+1, len(nums)):
+        #         print(i, j)
+        #         if nums[i] + nums[j] == target:
+        #             return [i, j]
+                
+#         hashMap = {nums[idx]: idx for idx in range(len(nums))}
+#         print(hashMap)
         
-#         for i in range(len(nums)):
-#             for j in range(len(nums) - 1):
-#                 if nums[i] + nums[j+1] == target:
-#                     return [i, j+1]
-#                 return [0,0]
+#         for idx in range(len(nums)):
+#             complement = target - nums[idx]
+#             if hashmap.
+                                                   
+        
 
         
