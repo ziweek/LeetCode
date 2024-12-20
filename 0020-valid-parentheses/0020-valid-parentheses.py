@@ -12,9 +12,9 @@ class Solution(object):
         }
         
         for char in s:
-            # print(char)
             if char not in table:
                 stack.append(char)
             elif not stack or table[char] != stack.pop():
                 return False
+            # print(stack)
         return len(stack) == 0
