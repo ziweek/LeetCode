@@ -4,16 +4,17 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-
-        while True:
-            if '[]' in s:
-                s = s.replace('[]','')
-            elif '{}' in s:
-                s = s.replace('{}','')
-            elif '()' in s:
-                s = s.replace('()','')
-            else:
-                break
-
-        return s == ''
+        stack = []
+        table = {
+            ')': '(',
+            '}': '{',
+            ']': '['
+        }
         
+        for char in s:
+            # print(char)
+            if char not in table:
+                stack.append(char)
+            elif not stack or table[char] != stack.pop():
+                return False
+        return len(stack) == 0
