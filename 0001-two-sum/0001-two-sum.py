@@ -27,20 +27,36 @@ class Solution(object):
         """
         
         # brute force Approach
-        # for i in range(len(nums)):
-        #     for j in range(i+1, len(nums)):
-        #         if nums[i] + nums[j] == target:
-        #             return [i, j]
-        # return []
+#         for i in range(len(nums)):
+#             for j in range(i+1, len(nums)):
+#                 if nums[i] + nums[j] == target:
+#                     return [i, j]
+#         return []
          
-        # HashMap Approach
-        numToIndex = {}
-        for i,num in enumerate(nums):
-            complement = target - num
-            if complement in numToIndex:
-                return [numToIndex[complement], i]
-            numToIndex[num] = i
+#         # HashMap Approach
+#         numToIndex = {}
+#         for i,num in enumerate(nums):
+#             complement = target - num
+#             if complement in numToIndex:
+#                 return [numToIndex[complement], i]
+#             numToIndex[num] = i
+#         return []
+    
+    
+        # two-pointer Approach
+        numsWithIndex = [(num, i) for i,num in enumerate(nums)]
+        numsWithIndex.sort()
+        left, right = 0, len(nums) - 1
+        while left < right:
+            num_sum = numsWithIndex[left][0] + numsWithIndex[right][0]
+            if num_sum == target:
+                return [numsWithIndex[left][1], numsWithIndex[right][1]]
+            elif num_sum < target:
+                left += 1
+            else:
+                right -= 1
         return []
+    
                                                    
         
 
