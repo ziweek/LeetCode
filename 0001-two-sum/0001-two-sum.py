@@ -28,10 +28,22 @@ class Solution(object):
         
         for i_1, e_1 in enumerate(nums):
             for i_2, e_2 in enumerate(nums):
-                if e_1 + e_2 == target:
-                    if i_1 != i_2:
+                if i_1 != i_2:
+                    if e_1 + e_2 == target:
                         return [i_1, i_2]
+                        
+        
+        # for i_1, e_1 in enumerate(nums):
+        #     for i_2, e_2 in enumerate(nums):
+        #         if e_1 + e_2 == target:
+        #             if i_1 != i_2:
+        #                 return [i_1, i_2]
 
+#         for i, n in enumerate(nums):
+#             complement = target - n
+            
+#             if complement in nums:
+#                 return [nums.index(n), nums[i+1:].index(complement) + (i+1)]
 
                 
         
