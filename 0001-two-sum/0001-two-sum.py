@@ -26,57 +26,21 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
-        return []
-            
-        
-        # for i_1, e_1 in enumerate(nums):
-        #     for i_2, e_2 in enumerate(nums):
-        #         if i_1 != i_2:
-        #             if e_1 + e_2 == target:
-        #                 return [i_1, i_2]
-        
-        
-                        
-        
-        # for i_1, e_1 in enumerate(nums):
-        #     for i_2, e_2 in enumerate(nums):
-        #         if e_1 + e_2 == target:
-        #             if i_1 != i_2:
-        #                 return [i_1, i_2]
-
-#         for i, n in enumerate(nums):
-#             complement = target - n
-            
-#             if complement in nums:
-#                 return [nums.index(n), nums[i+1:].index(complement) + (i+1)]
-
-                
-        
-        # nums = [3,3]
-        # target = 6
-        
-        # for i,e_i in enumerate(nums):
-        #     for j,e_j in enumerate(nums):
-        #         if e_i + e_j == target:
-        #             if i != j:
-        #                 return [i, j]
-        
+        # brute force Approach
         # for i in range(len(nums)):
         #     for j in range(i+1, len(nums)):
-        #         print(i, j)
         #         if nums[i] + nums[j] == target:
         #             return [i, j]
-                
-#         hashMap = {nums[idx]: idx for idx in range(len(nums))}
-#         print(hashMap)
-        
-#         for idx in range(len(nums)):
-#             complement = target - nums[idx]
-#             if hashmap.
+        # return []
+         
+        # HashMap Approach
+        numToIndex = {}
+        for i,num in enumerate(nums):
+            complement = target - num
+            if complement in numToIndex:
+                return [numToIndex[complement], i]
+            numToIndex[num] = i
+        return []
                                                    
         
 
