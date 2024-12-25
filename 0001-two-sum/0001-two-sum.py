@@ -26,11 +26,20 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        for i_1, e_1 in enumerate(nums):
-            for i_2, e_2 in enumerate(nums):
-                if i_1 != i_2:
-                    if e_1 + e_2 == target:
-                        return [i_1, i_2]
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+        return []
+            
+        
+        # for i_1, e_1 in enumerate(nums):
+        #     for i_2, e_2 in enumerate(nums):
+        #         if i_1 != i_2:
+        #             if e_1 + e_2 == target:
+        #                 return [i_1, i_2]
+        
+        
                         
         
         # for i_1, e_1 in enumerate(nums):
