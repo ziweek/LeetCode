@@ -24,7 +24,7 @@ class Solution(object):
                 high = mid
             else:
                 low = mid + 1
-        print(low, mid, high)
+        # print(low, mid, high)
         return low
 
         
