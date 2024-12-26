@@ -16,7 +16,7 @@ class Solution(object):
         if len(s_replaced) <= 1:
             return True
         
-        print(s_replaced)
+        # print(s_replaced)
         i_start = 0
         i_end = len(s_replaced)-1 - i_start
         # print(i_start, i_end)
