@@ -6,10 +6,10 @@ class Solution(object):
         :rtype: bool
         """
         ransomNote_map = Counter(ransomNote)
-        print(ransomNote_map)
+        # print(ransomNote_map)
             
         magazine_map = Counter(magazine)
-        print(magazine_map)
+        # print(magazine_map)
         
         for e,num in ransomNote_map.items():
             if e not in magazine_map.keys():
