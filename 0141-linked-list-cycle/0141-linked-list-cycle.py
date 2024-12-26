@@ -10,15 +10,26 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        tail = head
-        # tail_next = tail.next
-        nums = []
-        while tail != None:
-            if tail not in nums:
-                nums.append(tail)
-            else:
+        # tail = head
+        # nums = []
+        # while tail != None:
+        #     if tail not in nums:
+        #         nums.append(tail)
+        #     else:
+        #         return True
+        #     tail = tail.next
+
+        fast = head
+        slow = head
+        
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            
+            if fast == slow:
                 return True
-            tail = tail.next
+    
+        return False
             
 
                 
