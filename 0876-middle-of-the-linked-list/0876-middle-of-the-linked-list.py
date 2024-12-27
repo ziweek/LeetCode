@@ -12,13 +12,10 @@ class Solution(object):
         result = []
         counter = 0
         while head != None:
-            # print(head.val)
             result.append(head)
             head = head.next
             counter += 1
-        
-        # print(counter // 2)
-        # print(result)
+
         return result[counter // 2]
 
         
